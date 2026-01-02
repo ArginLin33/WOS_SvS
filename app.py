@@ -12,7 +12,7 @@ is_admin = st.query_params.get("role") == "admin"
 
 # 只有成員端 (User) 會 0.1 秒自動刷新
 if not is_admin:
-    st_autorefresh(interval=100, key="user_refresh")
+    st_autorefresh(interval=250, key="user_refresh")
 else:
     st.sidebar.info("管理模式：自動刷新已關閉 | Admin Mode: Auto-refresh OFF")
     if st.sidebar.button("手動刷新 (Manual Refresh)"):
